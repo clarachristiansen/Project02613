@@ -40,10 +40,8 @@ def summary_stats(u, interior_mask):
         'pct_below_15': pct_below_15,
     }
 
-
-if __name__ == '__main__':
+def load_floorplans(LOAD_DIR = '/dtu/projects/02613_2025/data/modified_swiss_dwellings/'):
     # Load data
-    LOAD_DIR = '/dtu/projects/02613_2025/data/modified_swiss_dwellings/'
     with open(join(LOAD_DIR, 'building_ids.txt'), 'r') as f:
         building_ids = f.read().splitlines()
 
@@ -61,6 +59,12 @@ if __name__ == '__main__':
         all_u0[i] = u0
         all_interior_mask[i] = interior_mask
 
+    return building_ids,all_u0, all_interior_mask
+
+if __name__ == '__main__':
+    # Load data
+    building_ids, all_u0, all_interior_mask = load_floorplans()
+    
     # Run jacobi iterations for each floor plan
     MAX_ITER = 20_000
     ABS_TOL = 1e-4
