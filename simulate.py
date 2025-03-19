@@ -49,6 +49,10 @@ def load_floorplans(LOAD_DIR = '/dtu/projects/02613_2025/data/modified_swiss_dwe
         N = 1
     else:
         N = int(sys.argv[1])
+    
+    #choose N random buildings
+    np.random.seed(0)
+    np.random.shuffle(building_ids)
     building_ids = building_ids[:N]
 
     # Load floor plans
@@ -64,7 +68,7 @@ def load_floorplans(LOAD_DIR = '/dtu/projects/02613_2025/data/modified_swiss_dwe
 if __name__ == '__main__':
     # Load data
     building_ids, all_u0, all_interior_mask = load_floorplans()
-    
+
     # Run jacobi iterations for each floor plan
     MAX_ITER = 20_000
     ABS_TOL = 1e-4
