@@ -1,5 +1,6 @@
 from os.path import join
 import sys
+import time
 
 import numpy as np
 
@@ -74,9 +75,16 @@ if __name__ == '__main__':
     ABS_TOL = 1e-4
 
     all_u = np.empty_like(all_u0)
+    
+    #time the jacobi iterations
+    s = time.time()
+
     for i, (u0, interior_mask) in enumerate(zip(all_u0, all_interior_mask)):
         u = jacobi(u0, interior_mask, MAX_ITER, ABS_TOL)
         all_u[i] = u
+
+    e = time.time()
+    print(f"Jacobi iterations took {e-s:.2f} seconds")
 
     # Print summary statistics in CSV format
     stat_keys = ['mean_temp', 'std_temp', 'pct_above_18', 'pct_below_15']
