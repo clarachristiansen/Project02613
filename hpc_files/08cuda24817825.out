@@ -1,0 +1,69 @@
+19.55345129966736
+Average mean temperature:
+13.993430510549768
+Average standard deviation of temperature:
+6.963149803213206
+Number of buildings with at least 50%% area above 18C:
+2
+Number of buildings with at least 50%% area below 15C:
+7
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24817825: <08cuda> in cluster <dcc> Done
+
+Job <08cuda> was submitted from host <n-62-27-21> by user <s214656> in cluster <dcc> at Sun Apr 27 19:55:02 2025
+Job was executed on host(s) <16*n-62-20-14>, in queue <gpuv100>, as user <s214656> in cluster <dcc> at Sun Apr 27 19:55:03 2025
+</zhome/a7/4/167826> was used as the home directory.
+</zhome/a7/4/167826/Documents/pythonHPC/project/Project02613> was used as the working directory.
+Started at Sun Apr 27 19:55:03 2025
+Terminated at Sun Apr 27 19:55:28 2025
+Results reported at Sun Apr 27 19:55:28 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J 08cuda
+#BSUB -q gpuv100
+#BSUB -W 00:05
+#BSUB -R rusage[mem=8GB]
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -n 16
+#BSUB -R "span[hosts=1]"
+#BSUB -R "select[gpu32gb]"
+#BSUB -u s214656@dtu.dk
+#BSUB -o hpc_files/08cuda%J.out
+#BSUB -e hpc_files/08cuda%J.err
+
+source /dtu/projects/02613_2024/conda/conda_init.sh
+conda activate 02613
+
+time python 08cuda.py 10
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   21.83 sec.
+    Max Memory :                                 162 MB
+    Average Memory :                             162.00 MB
+    Total Requested Memory :                     131072.00 MB
+    Delta Memory :                               130910.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                7
+    Run time :                                   25 sec.
+    Turnaround time :                            26 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <hpc_files/08cuda24817825.err> for stderr output of this job.
+

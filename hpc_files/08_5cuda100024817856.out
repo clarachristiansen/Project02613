@@ -1,0 +1,72 @@
+7.915765285491943
+building_id, mean_temp, std_temp, pct_above_18, pct_below_15
+14201, 12.207445984390068, 7.225590864708688, 27.738047126214617, 65.37751928449684
+41396, 14.120146024540201, 7.270995755520782, 37.20208302871475, 54.10700828937453
+8408, 17.007519397345618, 6.523308623159733, 53.77889791219391, 36.24101558853729
+25218, 11.105186521642604, 6.479011800871118, 20.734263997217944, 72.03040389487803
+5032, 14.30910581575453, 7.252333552981005, 37.79644109791808, 54.101103710139334
+49147, 14.369216532285467, 7.066179146868305, 37.473299397443114, 53.07282755395912
+10841, 15.93050725084221, 7.4229485779820115, 46.82583480980181, 45.35807991325142
+8678, 13.431991601329655, 6.981414388255956, 32.1239319927505, 59.23793906964702
+48867, 10.221478138557039, 6.73292009678804, 18.244882228922492, 76.43444945705153
+47841, 16.849921770977854, 6.643921903567574, 51.473526473526476, 38.01823176823177
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24817856: <08_5cuda1000> in cluster <dcc> Done
+
+Job <08_5cuda1000> was submitted from host <n-62-27-21> by user <s214656> in cluster <dcc> at Sun Apr 27 20:11:30 2025
+Job was executed on host(s) <16*n-62-20-10>, in queue <gpuv100>, as user <s214656> in cluster <dcc> at Sun Apr 27 20:12:20 2025
+</zhome/a7/4/167826> was used as the home directory.
+</zhome/a7/4/167826/Documents/pythonHPC/project/Project02613> was used as the working directory.
+Started at Sun Apr 27 20:12:20 2025
+Terminated at Sun Apr 27 20:12:35 2025
+Results reported at Sun Apr 27 20:12:35 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J 08_5cuda1000
+#BSUB -q gpuv100
+#BSUB -W 00:05
+#BSUB -R rusage[mem=8GB]
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -n 16
+#BSUB -R "span[hosts=1]"
+#BSUB -R "select[gpu32gb]"
+#BSUB -u s214656@dtu.dk
+#BSUB -o hpc_files/08_5cuda1000%J.out
+#BSUB -e hpc_files/08_5cuda1000%J.err
+
+source /dtu/projects/02613_2024/conda/conda_init.sh
+conda activate 02613
+
+time python 08_5cuda.py 10
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   10.31 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     131072.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   15 sec.
+    Turnaround time :                            65 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <hpc_files/08_5cuda100024817856.err> for stderr output of this job.
+

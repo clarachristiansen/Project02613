@@ -1,0 +1,13 @@
+Loaded module: cuda/11.8
+/dtu/projects/02613_2024/conda/miniconda3/envs/02613/lib/python3.11/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 2 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/dtu/projects/02613_2024/conda/miniconda3/envs/02613/lib/python3.11/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 9 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/dtu/projects/02613_2024/conda/miniconda3/envs/02613/lib/python3.11/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/dtu/projects/02613_2024/conda/miniconda3/envs/02613/lib/python3.11/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 2 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+
+real	0m11.677s
+user	0m8.949s
+sys	0m0.534s
