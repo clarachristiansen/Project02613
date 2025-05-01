@@ -4,7 +4,7 @@
 #BSUB -u s214659@dtu.dk
 #BSUB -W 10:00
 #BSUB -R rusage[mem=16GB]
-#BSUB -n 24
+#BSUB -n 16
 #BSUB -R "span[hosts=1]"
 #BSUB -R "select[model == XeonGold6226R]" 
 #BSUB -o hpc_files/05parallelize%J.out
